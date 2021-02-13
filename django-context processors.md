@@ -37,7 +37,7 @@ def model_x_items(request):
     }
 ```
 
-> Explanations:
+> Explanations: <br>
     `model_x_items(request):` A Python function that takes one argument which is a request object. <br>
     `all_x_items:` A list of your model objects that returned as a dictionary.
 
