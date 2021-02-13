@@ -38,8 +38,9 @@ def model_x_items(request):
 ```
 
 > Explanations:
-- model_x_items(request): A Python function that takes one argument which is a request object.
-- all_x_items: A list of your model objects that returned as a dictionary.
+    `model_x_items(request):` A Python function that takes one argument which is a request object. <br>
+    `all_x_items:` A list of your model objects that returned as a dictionary.
+
 
 - Now to make it accessible inside our templates, we need to add it inside our templates, context, so open `settings.py` and do like so:
 
