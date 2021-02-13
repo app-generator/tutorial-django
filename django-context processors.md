@@ -1,6 +1,6 @@
 # Context Processors
 
-The `context processor` has a simple interface. It’s a Python function that takes one argument, an HttpRequest object, and returns a dictionary that gets added to the template context. Each `context processor` must return a dictionary.
+The `context processor` has a simple interface. It’s a python function that takes one argument, an HttpRequest object, and returns a dictionary that gets added to the template context. Each `context processor` must return a dictionary.
 
 > Custom context processors can live anywhere in your codebase.
 
