@@ -79,7 +79,7 @@ $ vim YOUR_APP/templates/YOUR_APP/TEMPLATE_NAME.py
 	<body>
 		<u>
 			{% for item in all_x_items %}
-				<li><a href="{{ item.link }}">{{ s.name }}</a></li>
+				<li><a href="{{ item.link }}">{{ item.name }}</a></li>
 			{% endfor %}
 		</u>
 	</body>
