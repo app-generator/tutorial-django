@@ -33,7 +33,7 @@ from .models import YOUR_MODEL
 
 def model_x_items(request):
     return {
-       ‘all_x_items’: YOUR_MODEL.objects.all(),
+       'all_x_items': YOUR_MODEL.objects.all(),
     }
 ```
 
