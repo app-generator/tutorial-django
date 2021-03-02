@@ -11,7 +11,7 @@ Django is based on MVT (Model View Template) architecture and revolves around CR
 - **Update:** Update or edit existing entries in a table in the database.
 - **Delete:** Delete, deactivate, or remove existing entries in a table in the database.
 
-## Django CRUD (Create, Retrieve, Update, Delete) Function Based Views
+## Let's start a simple project to explain more:
 
 Consider a project named crudtest having an app named poll. Now let’s create a model of which we will be creating instances through our view. In `poll/models.py`.
 
@@ -47,5 +47,115 @@ class PollForm(forms.ModelForm):
   
     class Meta: 
         model = PollModel
-        fields = ["title", "description"]  # specify fields to be used
+        fields = ['title', 'description']  # specify fields to be used
+```
+
+### Now let's implement each of the CRUD sections:
+
+#### Create View
+
+It's just like taking an input from a user and storing it in a specific table to create an instance of a table in the database.
+
+`poll/views.py`:
+
+```python
+from django.shortcuts import render
+from .models import PollModel
+from .forms import PollForm
+
+
+def create_view(request):
+    context = {}  # dictionary for initial data with field names as keys
+
+    form = PollForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+    
+    context['form'] = form
+    return render(request, "create_view.html", context)
+```
+
+Then create a template in `templates/create_view.html`:
+
+```html
+<form method="POST"> 
+    {% csrf_token %} <!-- CSRF token for security -->
+  
+    {{ form.as_p }} 
+      
+    <input type="submit" value="Send"> 
+</form>
+```
+
+<br>
+
+> Read is basically divided into two types of views, List View and Detail View.
+
+#### List View
+ 
+It's used to display multiple types of data or list all or particular instances of a table from the database in a particular order  on a single page or view.
+
+`poll/views.py`:
+
+```python
+from django.shortcuts import render  
+from .models import PollModel
+
+
+def list_view(request):
+    context = {}   # dictionary for initial data with field names as keys
+    context["items"] = PollModel.objects.all()  # add the dictionary during initialization
+    return render(request, "list_view.html", context)
+```
+
+Then create a template in `templates/list_view.html`:
+
+```html
+<div class="main"> 
+    
+    {% for item in items %}
+	    <p>{{ item.title }}</p><br/> 
+	    <p>{{ item.description }}</p><br/>
+	    <hr> 
+  	{% endfor %}
+
+</div>
+```
+
+#### Detail View
+
+It's used to display multiple types of data or  a particular instnace of a table from the database with all the necessary details on a single page.
+
+`poll/urls.py`:
+
+```python
+from django.urls import path   
+from .views import detail_view 
+  
+urlpatterns = [ 
+    path('poll/<int:id>/', detail_view), 
+]
+```
+
+`poll/views.py`:
+
+```python
+from django.shortcuts import render 
+from .models import PollModel 
+
+def detail_view(request, id): 
+    context = {}  # dictionary for initial data with field names as keys  
+    context["data"] = PollModel.objects.get(id=id)
+    return render(request, "detail_view.html", context)
+```
+
+Then create a template in `templates/detail_view.html`:
+
+```html
+<div class="main"> 
+    
+    {{ data.title }}<br/> 
+    {{ data.description }}
+
+</div>
 ```
