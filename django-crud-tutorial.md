@@ -57,7 +57,6 @@ class PollForm(forms.ModelForm):
 It's just like taking an input from a user and storing it in a specific table to create an instance of a table in the database.
 
 `poll/views.py`:
-
 ```python
 from django.shortcuts import render
 from .models import PollModel
@@ -83,7 +82,7 @@ Then create a template in `templates/create_view.html`:
   
     {{ form.as_p }} 
       
-    <input type="submit" value="Send"> 
+    <input type="submit" value="Create"> 
 </form>
 ```
 
@@ -96,7 +95,6 @@ Then create a template in `templates/create_view.html`:
 It's used to display multiple types of data or list all or particular instances of a table from the database in a particular order  on a single page or view.
 
 `poll/views.py`:
-
 ```python
 from django.shortcuts import render  
 from .models import PollModel
@@ -127,18 +125,16 @@ Then create a template in `templates/list_view.html`:
 It's used to display multiple types of data or  a particular instnace of a table from the database with all the necessary details on a single page.
 
 `poll/urls.py`:
-
 ```python
 from django.urls import path   
 from .views import detail_view 
   
 urlpatterns = [ 
-    path('poll/<int:id>/', detail_view), 
+    path('poll/<int:id>/', detail_view, name='detail_poll'), 
 ]
 ```
 
 `poll/views.py`:
-
 ```python
 from django.shortcuts import render 
 from .models import PollModel 
@@ -156,6 +152,107 @@ Then create a template in `templates/detail_view.html`:
     
     {{ data.title }}<br/> 
     {{ data.description }}
+
+</div>
+```
+
+#### Update View
+
+It's used to update entries for a particular instance of a table from the database.
+
+`poll/views.py`:
+```python
+from django.shortcuts import get_object_or_404, render, redirect
+from .models import PollModel 
+from .forms import PollForm 
+
+
+# after updating it will redirect to detail_View 
+def detail_view(request, id): 
+    context = {}  # dictionary for initial data with field names as keys
+    context["data"] = PollModel.objects.get(id=id)  # add the dictionary during initialization
+    return render(request, "detail_view.html", context)
+  
+# update view for details 
+def update_view(request, id): 
+    context = {}  # dictionary for initial data with field names as keys
+    obj = get_object_or_404(PollModel, id=id)  # fetch the object related to passed id
+
+    # pass the object as instance in form 
+    form = PollForm(request.POST or None, instance=obj) 
+
+    # save the data from the form and redirect to detail_view 
+    if form.is_valid(): 
+        form.save() 
+        return redirect("detail_poll", id)
+
+    context["form"] = form  # add form dictionary to context
+    return render(request, "update_view.html", context)
+```
+
+Then create a template in `templates/update_view.html`:
+
+```html
+<div class="main"> 
+
+    <form method="POST"> 
+        {% csrf_token %} <!-- CSRF token for security -->
+  
+        {{ form.as_p }} 
+  
+        <input type="submit" value="Update">
+    </form> 
+  
+</div>
+```
+
+#### Delete View
+
+It is used to delete a particular instance of a table from the database.
+
+`poll/views.py`:
+```python
+from django.shortcuts import get_object_or_404, render, redirect
+from .models import PollModel 
+
+
+# delete view for details 
+def delete_view(request, id): 
+    context = {}  # dictionary for initial data with field names as keys 
+    obj = get_object_or_404(PollModel, id=id)  # fetch the object related to passed id 
+
+    if request.method =="POST": 
+        obj.delete()  # delete object
+        return redirect("list_view")  # after deleting redirect to list view
+  
+    return render(request, "delete_view.html", context)
+```
+
+Now a url `poll/urls.py` mapping to this view:
+
+```python
+from django.urls import path 
+from .views import delete_view 
+
+urlpatterns = [ 
+    path('poll/<int:id>/delete/', delete_view, name='delete_poll'), 
+]
+```
+
+Then create a template in `templates/delete_view.html`:
+
+```html
+<div class="main"> 
+
+    <form method="POST"> 
+        {% csrf_token %} 
+
+        <p>Are you want to delete this item ?</p>
+        
+        <input type="submit" value="Yes" /> 
+    </form>
+
+    <a href="/">Cancel </a> 
 
 </div>
 ```
