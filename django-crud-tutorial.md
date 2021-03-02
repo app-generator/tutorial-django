@@ -4,7 +4,7 @@ Django is based on MVT (Model View Template) architecture and revolves around CR
 
 Let’s discuss what about CRUD means:
 
-![CRUD](https://raw.githubusercontent.com/app-generator/django-simple-charts/master/media/admin_import.png)
+![CRUD](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/crud.png)
 
 - **Create:** Create or add new entries in a table in the database.
 - **Read:** Read, retrieve, search, or view existing entries as a list (List View) or retrieve a particular entry in detail (Detail View).
