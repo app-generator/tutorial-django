@@ -256,3 +256,5 @@ Then create a template in `templates/delete_view.html`:
 
 </div>
 ```
+
+Well, we have successfully created a CRUD application using Django.
