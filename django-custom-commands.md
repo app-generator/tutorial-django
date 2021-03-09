@@ -10,6 +10,11 @@ Just before we get started, let’s take a moment to familiarize with Django’s
 $ python manage.py help
 ```
 
+## Advantage
+The main advantage of `custom command` is that all Django machinery is loaded and ready to be used. That means you can import `models`, `execute queries` to the database `using Django’s ORM` and `interact` with all your project’s resources.
+
+
+## Structure
 We can create our own commands for our apps and include them in the list by creating a management/commands directory inside an app directory, like below:
 
 ```bash
@@ -57,6 +62,19 @@ class Command(BaseCommand):
 
     def handle(self, *args, **kwargs):
         time = timezone.now().strftime('%X')
-        self.stdout.write("It's now %s" % time)
+        self.stdout.write("It's %s" % time)
 ```
 
+Django management command is composed by a class named `Command` which inherits from `BaseCommand`. The command code should be defined inside the `handle()` method.
+
+This command can be executed as:
+
+```bash
+$ python manage.py what_time_is_it
+```
+
+Output:
+
+```bash
+It's 10:30:00
+```
