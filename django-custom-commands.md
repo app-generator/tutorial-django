@@ -51,7 +51,7 @@ $ python manage.py my_custom_command
 
 what the custom command should look like:
 
-`management/commands/what_time_is_it.py`:
+`management/commands/my_custom_command.py`:
 
 ```python
 from django.core.management.base import BaseCommand
@@ -70,7 +70,7 @@ Django management command is composed by a class named `Command` which inherits 
 This command can be executed as:
 
 ```bash
-$ python manage.py what_time_is_it
+$ python manage.py my_custom_command
 ```
 
 Output:
@@ -78,3 +78,195 @@ Output:
 ```bash
 It's 10:30:00
 ```
+
+## Using Arguments
+
+To handle arguments in our custom command we should define a method named `add_arguments`.
+
+> Optional Arguments: The optional (and named) arguments can be passed in any order. In the example below you will find the definition of an argument named “prefix”, which will be used to compose the username field.
+
+## Let's start an example to explain more
+
+This example is a command that create random user instances. It takes an argument named `total`, which will define the number of users that will be created by the command.
+
+`management/commands/generate_users.py`:
+
+```python
+from django.contrib.auth.models import User
+from django.core.management.base import BaseCommand
+from django.utils.crypto import get_random_string
+
+class Command(BaseCommand):
+    help = 'Create random users'
+
+    def add_arguments(self, parser):
+        parser.add_argument('total', type=int, help='Indicates the number of users to be created')
+        parser.add_argument('-p', '--prefix', type=str, help='Define a username prefix', )  # Optional argument
+
+    def handle(self, *args, **kwargs):
+        total = kwargs['total']
+        prefix = kwargs['prefix']
+
+        for i in range(total):
+            if prefix:
+                username = '{prefix}_{random_string}'.format(prefix=prefix, random_string=get_random_string())
+            else:
+                username = get_random_string()
+            User.objects.create_user(username=username, password='test_123456')
+```
+
+Usage:
+
+```bash
+$ python manage.py generate_users 3 --prefix custom_user
+```
+
+Or:
+
+```bash
+$ python manage.py generate_users 4 -p custom_user
+```
+
+## Flag Arguments
+
+Another type of optional arguments are flags, which are used to handle boolean values. Let’s say we want to add an `--admin` flag, to instruct our command to create a super user or to create a regular user if the flag is not present.
+
+`management/commands/create_users.py`:
+
+```python
+from django.contrib.auth.models import User
+from django.core.management.base import BaseCommand
+from django.utils.crypto import get_random_string
+
+class Command(BaseCommand):
+    help = 'Create random users'
+
+    def add_arguments(self, parser):
+        parser.add_argument('total', type=int, help='Indicates the number of users to be created')
+        parser.add_argument('-p', '--prefix', type=str, help='Define a username prefix')
+        parser.add_argument('-a', '--admin', action='store_true', help='Create an admin account')
+
+    def handle(self, *args, **kwargs):
+        total = kwargs['total']
+        prefix = kwargs['prefix']
+        admin = kwargs['admin']
+
+        for i in range(total):
+            if prefix:
+                username = '{prefix}_{random_string}'.format(prefix=prefix, random_string=get_random_string())
+            else:
+                username = get_random_string()
+
+            if admin:
+                User.objects.create_superuser(username=username, email='', password='123')
+            else:
+                User.objects.create_user(username=username, email='', password='123')
+```
+
+Usage:
+
+```bash
+$ python manage.py create_users 2 --admin
+```
+
+Or:
+
+```bash
+$ python manage.py create_users 2 -a
+```
+
+
+## Arbitrary List of Arguments
+
+Let’s create a new command now named `delete_users`. In this new command we will be able to pass a list of user ids and the command should delete those users from the database.
+
+`management/commands/delete_users.py`:
+
+```python
+from django.contrib.auth.models import User
+from django.core.management.base import BaseCommand
+
+class Command(BaseCommand):
+    help = 'Delete users'
+
+    def add_arguments(self, parser):
+        parser.add_argument('user_id', nargs='+', type=int, help='User ID')
+
+    def handle(self, *args, **kwargs):
+        users_ids = kwargs['user_id']
+
+        for user_id in users_ids:
+            try:
+                user = User.objects.get(pk=user_id)
+                user.delete()
+                self.stdout.write('User "%s (%s)" deleted with success!' % (user.username, user_id))
+            except User.DoesNotExist:
+                self.stdout.write('User with id "%s" does not exist.' % user_id)
+```
+
+Usage:
+
+```bash
+$ python manage.py delete_users 1
+```
+
+Output:
+
+```bash
+User "SMl5ISqAsIS8 (1)" deleted with success!
+```
+
+> We can also pass a number of ids separated by spaces, so the command will delete the users in a single call
+
+```bash
+$ python manage.py delete_users 1 2 3 4
+```
+
+Output:
+
+```bash
+User with id "1" does not exist.
+User "9teHR4Y7Bz4q (2)" deleted with success!
+User "ABdSgmBtfO2t (3)" deleted with success!
+User "BsDxOO8Uxgvo (4)" deleted with success!
+```
+
+## Styling
+
+We could improve the previous example a little big by setting an appropriate color to the output message.
+
+`management/commands/delete_users.py`:
+
+```python
+from django.contrib.auth.models import User
+from django.core.management.base import BaseCommand
+
+class Command(BaseCommand):
+    help = 'Delete users'
+
+    def add_arguments(self, parser):
+        parser.add_argument('user_id', nargs='+', type=int, help='User ID')
+
+    def handle(self, *args, **kwargs):
+        users_ids = kwargs['user_id']
+
+        for user_id in users_ids:
+            try:
+                user = User.objects.get(pk=user_id)
+                user.delete()
+                self.stdout.write(self.style.SUCCESS('User "%s (%s)" deleted with success!' % (user.username, user_id)))
+            except User.DoesNotExist:
+                self.stdout.write(self.style.WARNING('User with id "%s" does not exist.' % user_id))
+```
+
+
+Usage is the same as before, difference now is just the output:
+
+```bash
+$ python manage.py delete_users 3 4 5 6
+```
+
+Output:
+
+![CRUD](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/styling1.png)
+
