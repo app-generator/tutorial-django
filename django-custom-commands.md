@@ -268,7 +268,7 @@ $ python manage.py delete_users 3 4 5 6
 
 Output:
 
-![STYLING](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/styling1.png)
+![STYLING](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/custom_command_2.png)
 
 
 A list of all available styles, in form of a management command:
@@ -301,7 +301,7 @@ class Command(BaseCommand):
 
 Output:
 
-![STYLING](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/styling2.png)
+![STYLING](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/custom_command_2.png)
 
 
 ## Advanced Usage
