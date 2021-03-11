@@ -5,7 +5,7 @@ In this tutorial, we will talk about the Django MVT architecture and how is it d
 ## Introduction
 
 Django is a Python based free and open-source web framework that follows the MVT (Model View Template) architectural pattern. 
-Django's primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and "pluggability" of components, less code, low coupling, rapid development, and the principle of don't repeat yourself. Python is used throughout, even for settings, files, and data models. Django also provides an optional administrative create, read, update and delete interface that is generated dynamically through introspection and configured via admin models.
+Django's primary goal is to ease the creation of complex, database-driven websites. The framework emphasizes reusability and "pluggability" of components, less code, low coupling, rapid development, and the principle of don't repeat yourself. Python is used throughout, even for settings, files, and data models. Django also provides an optional administrative create, read, update and delete (CRUD) interface that is generated dynamically through introspection and configured via admin models.
 
 ## MVT Architecture
 
@@ -30,15 +30,25 @@ Here, a user requests for a resource to the Django, Django works as a controller
 
 A Django Project when initialised contains basic files by default such as `manage.py`, `view.py`, etc. A simple project structure is enough to create a single page application. Here are the major files and there explanations. Inside the `geeks_site` folder (project folder) there will be following files:
 
-![ARCHITECTURE1](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/architecture_2.png)
+![ARCHITECTURE2](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/architecture_2.png)
 
-**manage.py:** This file is used to interact with your project via the command line (start the server, sync the database… etc). For getting the full list of command that can be executed by manage.py type this code in the terminal:
+- **manage.py:** This file is used to interact with your project via the command line (start the server, sync the database… etc). For getting the full list of command that can be executed by manage.py type this code in the terminal:
 
 ```bash
 $ python manage.py help
 ```
 
+- **folder (`geeks_site`):** This folder contains all the packages of your project. Initially it contains four files:
+
+![ARCHITECTURE3](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/architecture_3.png)
 
 
+**1- `_init_.py`:** It is python package.
+
+**2- `settings.py`:** As the name indicates it contains all the website `settings`. In this file we register any applications we create, the location of our static files, database configuration details, etc.
+
+**3- `urls.py`:** In this file we store all links of the project and functions to call.
+
+**4- `wsgi.py`:** This file is used in deploying the project in `WSGI`. It is used to help your Django application communicate with the web server.
 
 
