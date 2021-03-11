@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5517e2cf-47ae-406a-ad24-dd0d82036baa" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/django-software-architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/django-software-architecture.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/media/architecture_1.png" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/django-software-architecture.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="256">
-                <caret line="67" column="106" selection-start-line="67" selection-start-column="106" selection-end-line="67" selection-end-column="106" />
+              <first_editor relative-caret-position="286">
+                <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
               </first_editor>
               <second_editor />
             </state>
@@ -134,18 +133,18 @@
       <option name="presentableId" value="Default" />
       <updated>1615304978366</updated>
       <workItem from="1615304979638" duration="11276000" />
-      <workItem from="1615369157667" duration="9899000" />
+      <workItem from="1615369157667" duration="10574000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21175000" />
+    <option name="totallyTimeSpent" value="21850000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25379092" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25379092" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -159,7 +158,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -255,8 +254,8 @@
     <entry file="file://$PROJECT_DIR$/django-software-architecture.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="256">
-            <caret line="67" column="106" selection-start-line="67" selection-start-column="106" selection-end-line="67" selection-end-column="106" />
+          <first_editor relative-caret-position="286">
+            <caret line="70" lean-forward="true" selection-start-line="70" selection-end-line="70" />
           </first_editor>
           <second_editor />
         </state>

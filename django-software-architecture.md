@@ -63,6 +63,8 @@ MVC (Model View Controller) architecture has been there for a long time in the s
 
 - **Controller:** The `Controller` in MVC is responsible for the entire logic behind the web application. That is when the user uses a view and raises an Http request, the controller sees the user request and sends back the appropriate response.
 
-See the following graph that shows the MVT based control flow:
+See the following graph that shows the MVC based control flow:
 
 ![ARCHITECTURE0](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/architecture_0.png)
+
+Django prefers to use its own logic implementation in its web app and hence its framework handles all the controller parts by itself. 
