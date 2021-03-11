@@ -43,12 +43,26 @@ $ python manage.py help
 ![ARCHITECTURE3](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/architecture_3.png)
 
 
-**1- `_init_.py`:** It is python package.
+1- **`_init_.py`:** It is python package.
 
-**2- `settings.py`:** As the name indicates it contains all the website `settings`. In this file we register any applications we create, the location of our static files, database configuration details, etc.
+2- **`settings.py`:** As the name indicates it contains all the website `settings`. In this file we register any applications we create, the location of our static files, database configuration details, etc.
 
-**3- `urls.py`:** In this file we store all links of the project and functions to call.
+3- **`urls.py`:** In this file we store all links of the project and functions to call.
 
-**4- `wsgi.py`:** This file is used in deploying the project in `WSGI`. It is used to help your Django application communicate with the web server.
+4- **`wsgi.py`:** This file is used in deploying the project in `WSGI`. It is used to help your Django application communicate with the web server.
 
 
+## MVC Architecture
+
+MVC (Model View Controller) architecture has been there for a long time in the software industry. All most all languages employ MVC with slight variation, but the concept remains the same. MVC Structure has the following three parts:
+
+- **Model:** The `Model` provides the interface for the data stored in the Database. It's responsible for maintaining the data and handling the logical data structure for the entire web application.
+
+- **Views:** The `View` in MVC is a user interface. It is responsible for displaying Model Data to the user and also to take up information from the user. Views in MVC is not the same as the Views in Django.
+> We will learn the difference later in this tutorial.
+
+- **Controller:** The `Controller` in MVC is responsible for the entire logic behind the web application. That is when the user uses a view and raises an Http request, the controller sees the user request and sends back the appropriate response.
+
+See the following graph that shows the MVT based control flow:
+
+![ARCHITECTURE0](https://raw.githubusercontent.com/app-generator/tutorial-django/main/media/architecture_0.png)
