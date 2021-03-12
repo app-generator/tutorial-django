@@ -20,7 +20,7 @@
 
 <br />
 
-**Topics**
+## Topics
 
 - [What is Django](#what-is-django)
 - [Install Django](#install-install)
