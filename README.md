@@ -134,7 +134,7 @@ In this case the installed version is **3.1.7**
 
 <br />
 
-> :link: Read more: [Context Processors](./django-context processors.md)
+> :link: Read more: [Context Processors](./django-context-processors.md)
 
 <br />
 
