@@ -128,7 +128,7 @@ In this case the installed version is **3.1.7**
 
 <br />
 
-## [Context Processors](./django-context processors.md)
+## [Context Processors](./django-context-processors.md)
 
 :point_right: The `context processor` has a simple interface. It’s a python function that takes one argument, an HttpRequest object, and returns a dictionary that gets added to the template context. Each `context processor` must return a dictionary.
 
