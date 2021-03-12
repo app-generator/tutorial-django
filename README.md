@@ -32,14 +32,9 @@
 
 <br />
 
-## What is Django
+## [What is Django](https://docs.appseed.us/what-is/django/)
 
-:point_right: Flask is a lightweight web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.
-Compared to [Django](https://www.djangoproject.com/), Flask provides a lightweight codebase and more freedom to the developer.
-
-<br />
-
-<p align="right"><a href="#topics"> :point_up_2: Return to top</a></p>
+:point_right: Django is a high-level Python Web framework that encourages rapid development and clean, pragmatic design. Built by experienced developers, it takes care of much of the hassle of Web development, so you can focus on writing your app without needing to reinvent the wheel. It’s free and open source.
 
 <br />
 
@@ -65,10 +60,6 @@ Open a Python console (type python in terminal) and check the installed version 
 ```
 
 In this case the installed version is **3.1.7**
-
-<br />
-
-<p align="right"><a href="#topics"> :point_up_2: Return to top</a></p>
 
 <br />
 
