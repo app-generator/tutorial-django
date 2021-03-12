@@ -72,7 +72,7 @@ In this case the installed version is **3.1.7**
 
 <br />
 
-## Django Software Architecture](./django-software-architecture.md)
+## [Django Software Architecture](./django-software-architecture.md)
 
 :point_right: A short introduction to Django MVT architecture and how is it different from the long-existing MVC architecture.
 
