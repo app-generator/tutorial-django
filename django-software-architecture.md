@@ -9,7 +9,7 @@ Django's primary goal is to ease the creation of complex, database-driven websit
 
 ## MVT Architecture
 
-MVT Structure has the following three parts:
+MVT architecture has the following three parts:
 
 - **Model:** The `Model` is going to act as the interface of your data. It is responsible for maintaining data. It is the logical data structure behind the entire application and is represented by a database (generally relational databases such as MySql, Postgres).
 
@@ -58,7 +58,7 @@ MVC (Model View Controller) architecture has been there for a long time in the s
 
 - **Model:** The `Model` provides the interface for the data stored in the Database. It's responsible for maintaining the data and handling the logical data structure for the entire web application.
 
-- **Views:** The `View` in MVC is a user interface. It is responsible for displaying Model Data to the user and also to take up information from the user. Views in MVC is not the same as the Views in Django.
+- **View:** The `View` in MVC is a user interface. It is responsible for displaying Model Data to the user and also to take up information from the user. Views in MVC is not the same as the Views in Django.
 > We will learn the difference later in this tutorial.
 
 - **Controller:** The `Controller` in MVC is responsible for the entire logic behind the web application. That is when the user uses a view and raises an Http request, the controller sees the user request and sends back the appropriate response.
