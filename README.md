@@ -107,7 +107,7 @@ In this case the installed version is **3.1.7**
 
 ## [Django CRUD Tutorial](./django-crud-tutorial.md)
 
-:point_right: Django is based on MVT (Model View Template) architecture and revolves around CRUD (Create Read Update Delete) operations. In general, CRUD means performing Create, Retrieve, Update and Delete operations on a table in a database.
+:point_right: Django is based on MVT (Model View Template) architecture and revolves around CRUD (Create Read Update Delete) operations. In general, CRUD means performing Create, Read, Update and Delete operations on a table in a database.
 
 <br />
 

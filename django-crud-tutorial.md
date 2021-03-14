@@ -1,6 +1,6 @@
 # Django CRUD (Create Read Update Delete) tutorial
 
-Django is based on MVT (Model View Template) architecture and revolves around CRUD (Create Read Update Delete) operations. In general, CRUD means performing Create, Retrieve, Update and Delete operations on a table in a database. 
+Django is based on MVT (Model View Template) architecture and revolves around CRUD (Create Read Update Delete) operations. In general, CRUD means performing Create, Read, Update and Delete operations on a table in a database. 
 
 ## Let’s discuss what about CRUD means:
 
