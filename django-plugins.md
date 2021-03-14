@@ -141,7 +141,7 @@ SOFTWARE.
 name = django-polls
 version = 0.1
 description = A Django app to conduct Web-based polls.
-long_description = file: README.rst
+long_description = file: README.md
 url = https://www.example.com/
 author = Your Name
 author_email = yourname@example.com
