@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5517e2cf-47ae-406a-ad24-dd0d82036baa" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django-crud-tutorial.md" beforeDir="false" afterPath="$PROJECT_DIR$/django-crud-tutorial.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django-plugins.md" beforeDir="false" afterPath="$PROJECT_DIR$/django-plugins.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/django-plugins.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="271">
-                <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+              <first_editor relative-caret-position="181">
+                <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
               </first_editor>
               <second_editor />
             </state>
@@ -147,18 +145,18 @@
       <workItem from="1615304979638" duration="11276000" />
       <workItem from="1615369157667" duration="10849000" />
       <workItem from="1615544092899" duration="634000" />
-      <workItem from="1615653681930" duration="13773000" />
+      <workItem from="1615653681930" duration="14052000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36532000" />
+    <option name="totallyTimeSpent" value="36811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26177174" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26177174" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -172,7 +170,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -280,8 +278,8 @@
     <entry file="file://$PROJECT_DIR$/django-plugins.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="271">
-            <caret line="211" lean-forward="true" selection-start-line="211" selection-end-line="211" />
+          <first_editor relative-caret-position="181">
+            <caret line="22" column="25" lean-forward="true" selection-start-line="22" selection-start-column="25" selection-end-line="22" selection-end-column="25" />
           </first_editor>
           <second_editor />
         </state>

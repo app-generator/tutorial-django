@@ -17,8 +17,8 @@ Let’s say you were starting a new project that needed a polls app like the one
 The layout of the package will be like this:
 
 ```bash
-< PACKAGE ROOT >                          <-- package directory
- |-- poll/                                <-- app directory
+< PACKAGE ROOT >                          <-- package directory (django-polls)
+ |-- polls/                               <-- app directory
  |    |-- migrations/
  |    |    -- __init__.py
  |    |-- static/                         <-- static files
