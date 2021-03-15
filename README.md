@@ -29,6 +29,7 @@
 - [Custom Commands](#custom-commands)
 - [Django CRUD Tutorial](#django-crud-tutorial)
 - [Context Processors](#context-processors)
+- [Django plugins](#django-plugins)
 
 <br />
 
@@ -126,6 +127,20 @@ In this case the installed version is **3.1.7**
 <br />
 
 > :link: Read more: [Context Processors](./django-context-processors.md)
+
+<br />
+
+<p align="right"><a href="#topics"> :point_up_2: Return to top</a></p>
+
+<br />
+
+## [Django Plugins](./django-plugins.md)
+
+:point_right: A tutorial on how to create the first third-party Django library or application. The Python Package Index (PyPI) has a vast range of packages you can use in your own Python programs. 
+
+<br />
+
+> :link: Read more: [Django Plugins](./django-plugins.md)
 
 <br />
 
