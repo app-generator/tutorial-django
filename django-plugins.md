@@ -1,4 +1,4 @@
-# Django plugins
+# [Django Plugins](https://blog.appseed.us/django-tutorial-plugins/)
 
 This is a tutorial on how to create the first third-party Django library or application.
 
